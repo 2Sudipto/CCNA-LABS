@@ -1,4 +1,4 @@
-# Day 01 - [VLANs and TRUNK]
+# Day 01 - VLANs and TRUNK
 
 ## Overview
 
@@ -93,37 +93,56 @@ SW2(config-if)#exit
 </p>
 
 ### [Step/Feature 3]
+Trunk the switches
+<p align="center">
+  <img width="1024" height="678" alt="image" src="https://github.com/user-attachments/assets/9d12be58-b7a9-4984-8a00-d476480e57d0" />
+
+</p>
+
+### [Step/Feature 4]
 ---
+Assign IP addresses to the PCs
+<p align="center">
+<img width="770" height="336" alt="image" src="https://github.com/user-attachments/assets/cacb1992-622a-4715-a2e4-6609954773a4" />
+<img width="1026" height="266" alt="image" src="https://github.com/user-attachments/assets/c6ef3b2a-573b-4a1d-9a9e-927340761f28" />
+</p>
+Do the same on the other two PCs
 
 ## Verification
 
-[What was checked to confirm it worked — show commands, ping results. Screenshots go here if you have them.]
-
 <p align="center">
-  <img src="https://github.com/<your-username>/<your-repo>/blob/main/screenshots/day-XX-verification.png" alt="Verification" width="800">
+<img width="1088" height="890" alt="image" src="https://github.com/user-attachments/assets/59a1ef3f-3176-4495-9fd6-7f5869c08629" />
+<img width="1028" height="930" alt="image" src="https://github.com/user-attachments/assets/5e414495-3d39-469d-b94c-feeadcddd785" />
+<img width="1060" height="824" alt="image" src="https://github.com/user-attachments/assets/9c94732b-6c2e-4b1c-b58b-77601f64810d" />
 </p>
 
 ---
 
 ## Key Concepts Demonstrated
 
-- [Concept 1]
-- [Concept 2]
-- [Concept 3]
+- VLAN Creation and Naming
+- Access Port to VLAN Assignment
+- Trunk Port Configuration
+- VLAN Isolation vs. Same-VLAN Communication Across Switches
+- Static IP Addressing
+
 
 ---
 
 ## What I Learned
 
-[2-4 sentences, genuine — what actually clicked, what was tricky, any real troubleshooting worth mentioning. This is the section that reads as authentic rather than a checklist.]
+
+This lab helped me understand that VLANs create logical separation independent of physical switch placement — devices in the same VLAN can communicate across a trunk link even when they're on different switches, while devices in different VLANs stay isolated even on the same switch. I also learned that a trunk port doesn't create communication between different VLANs — it only allows multiple VLANs' traffic to travel across a single physical link, with each VLAN's isolation still enforced on the other end.
 
 ---
 
 ## Skills Practiced
 
-- [Skill 1]
-- [Skill 2]
-- [Skill 3]
+- VLAN Configuration and Verification
+- Access Port Assignment
+- Trunk Port Configuration
+- Static IP Address Assignment
+- Network Verification (`show vlan brief`, `show interfaces trunk`, `ping`)
 - Cisco Packet Tracer
 
 
