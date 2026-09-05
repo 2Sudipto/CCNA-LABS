@@ -66,9 +66,33 @@ SW2(config-vlan)#name IT
 
 ### [Step/Feature 2]
 ```
-[commands]
+SW1(config)#int f0/1
+SW1(config-if)#no shut
+SW1(config-if)#switchport mode access
+SW1(config-if)#switchport access vlan 200
+SW1(config-if)#exit
+SW1(config)#int f0/2
+SW1(config-if)#switchport mode access
+SW1(config-if)#switchport access vlan 100
+SW1(config-if)#no shut
+!
+SW2(config)#int f0/1
+SW2(config-if)#switchport mode access
+SW2(config-if)#switchport access vlan 100
+SW2(config-if)#no shut
+SW2(config-if)#exit
+SW2(config)#int f0/2
+SW2(config-if)#switchport mode access
+SW2(config-if)#switchport access vlan 200
+SW2(config-if)#no shut
+SW2(config-if)#exit
 ```
+<p align="center">
+<img width="1184" height="576" alt="image" src="https://github.com/user-attachments/assets/c7a0c9a8-1766-4285-9a97-4d588dcca59e" />
+<img width="1378" height="736" alt="image" src="https://github.com/user-attachments/assets/3173255b-4935-4194-a39d-f385e9ba8aaf" />
+</p>
 
+### [Step/Feature 3]
 ---
 
 ## Verification
