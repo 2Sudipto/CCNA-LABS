@@ -22,21 +22,21 @@ The purpose of this lab is to learn how to create VLANs, assign ports to differe
 
 ## IP Addressing
 
-| [VLAN/Segment] | [Network] | 
-  VLAN 100        192.168.10.0/24
-  VLAN 200        192.168.20.0/24  
+| VLAN/Segment | Network |
+|---|---|
+| VLAN 100 | 192.168.10.0/24 |
+| VLAN 200 | 192.168.20.0/24 |
 
 ---
 
 ## Configuration Steps
-
-1.Create VLAN 100 and VLAN 200 on both switches and verify.
-2.Assign each PC's port to the correct VLAN
-3.Configure the trunk link between the two switches
-4.Assign static IPs to all 4 PCs
-5.Verify VLANs and trunk with show commands
-6.Ping same-VLAN devices across switches — confirm success
-7.Ping different-VLAN devices — confirm failure
+1. Create VLAN 100 and VLAN 200 on both switches and verify
+2. Assign each PC's port to the correct VLAN
+3. Configure the trunk link between the two switches
+4. Assign static IPs to all 4 PCs
+5. Verify VLANs and trunk with show commands
+6. Ping same-VLAN devices across switches — confirm success
+7. Ping different-VLAN devices — confirm failure
 
 ### [Step/Feature 1]
 ```
