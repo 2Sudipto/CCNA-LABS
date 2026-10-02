@@ -63,7 +63,6 @@ All routers and switches use the same credentials.
 | SSH version | 2 |
 | Domain name | lab.local |
 
-> Lab credentials only. Never reuse real passwords in a public repo.
 
 ---
 
@@ -141,7 +140,7 @@ Repeat on Production, HR, and Marketing using their own hostnames and addresses 
 On each PC, open the Desktop tab, go to IP Configuration, and enter the static IP, subnet mask, and default gateway from the addressing table.
 
 <p align="center">
-  <img width="800" alt="image" src="PASTE_PC_CONFIG_IMAGE_LINK" />
+ <img width="878" height="638" alt="image" src="https://github.com/user-attachments/assets/087e18a1-3061-428b-b447-3bc426645b65" />
 </p>
 
 ---
@@ -198,7 +197,9 @@ NJ_Router#show ip interface brief
 All three interfaces on each router should show `up` and `up`.
 
 <p align="center">
-  <img width="800" alt="image" src="PASTE_INTERFACE_BRIEF_IMAGE_LINK" />
+<img width="812" height="122" alt="image" src="https://github.com/user-attachments/assets/5e7caa20-f8bb-48cd-a294-b08558d5897a" />
+  
+<img width="750" height="162" alt="image" src="https://github.com/user-attachments/assets/2008c76a-938d-4941-a1de-86b312a78de1" />
 </p>
 
 ### Verify the WAN Link
@@ -249,13 +250,17 @@ PC> ping 192.168.4.4
 From PC0(2) in NJ:
 ```
 PC> ping 192.168.1.4
-PC> ping 192.168.2.3
+PC> ping 192.168.2.4
 ```
 
 All pings should succeed. A first attempt sometimes shows a dropped packet, which is normal and comes from ARP resolution on the first packet.
 
 <p align="center">
-  <img width="800" alt="image" src="PASTE_PING_SUCCESS_IMAGE_LINK" />
+  NY
+<img width="586" height="431" alt="image" src="https://github.com/user-attachments/assets/0fe11b07-e9bd-4ee4-a2a3-1bdd6598f544" />
+  NJ
+<img width="580" height="445" alt="image" src="https://github.com/user-attachments/assets/fdf676c2-52e3-4890-9fd3-48fb4dfeb539" />
+
 </p>
 
 ### Verify the Path Across the WAN
@@ -267,7 +272,7 @@ PC> tracert 192.168.3.4
 The first hop should be 192.168.1.1 (NY_Router) and the second hop 1.1.1.2 (NJ_Router), which shows traffic crossing the serial link.
 
 <p align="center">
-  <img width="800" alt="image" src="PASTE_TRACERT_IMAGE_LINK" />
+   <img width="553" height="180" alt="image" src="https://github.com/user-attachments/assets/7611d39e-d74c-4321-9e5c-744cd2941c02" />
 </p>
 
 ### Verify Port Security
@@ -278,7 +283,8 @@ Sales#show port-security interface fastEthernet 0/1
 ```
 
 <p align="center">
-  <img width="800" alt="image" src="PASTE_PORT_SECURITY_IMAGE_LINK" />
+ <img width="548" height="353" alt="image" src="https://github.com/user-attachments/assets/161521a4-d0fa-4f25-9686-598d4dff60f6" />
+
 </p>
 
 ### Verify SSH Access
@@ -290,7 +296,7 @@ PC> ssh -l sshadmin 192.168.1.254
 After entering the password, the prompt should land directly in privileged EXEC mode (`Sales#`) because the account is privilege 15. This also proves the switch default gateway and the static routes work for management traffic.
 
 <p align="center">
-  <img width="800" alt="image" src="PASTE_SSH_IMAGE_LINK" />
+  <img width="427" height="128" alt="image" src="https://github.com/user-attachments/assets/e651910c-6041-43d2-8724-0062bec69920" />
 </p>
 
 ---
@@ -311,7 +317,8 @@ After entering the password, the prompt should land directly in privileged EXEC 
 
 ## What I Learned
 
-Write this part yourself in a few sentences. Ideas: why routes need to exist in both directions, why the DCE side needs the clock rate, why a switch needs a default gateway to be managed from another subnet, what privilege 15 changes about logging in, and what happened when you tested a port security violation.
+I learned how to configure static route between two different sites, I have learned that SVI on Layer 2 switches helps us use ssh to remotely connect to it.
+I have learned how to configure port-security, ssh, local account, and practice for the basics like console line password, enable secret, ip configuration, password encryption.
 
 ---
 
